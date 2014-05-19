@@ -1,7 +1,6 @@
 $(function(){
 
   var messages = [];
-  var token = 'CAACEdEose0cBAPsc5EojEPsnGCVpG05fBKSV1N2WrZAJJ8ngZB55cAkWQA82ZBSaGbiOUOcI9rpRxMxT5kAjGmhhSSieTjtXFEuMYYOEtVIrFYC9ZCkuSSdT5P45ZBBvuniyPGZCZCFPDxkZBFhiRr0BRKje0ZBG7ylmeiJ10ImU8k3mpY5DdoPNT5yZCc6qZBF5jUZD';
 
   function process(data) {
     if(data.data.length) {
@@ -16,6 +15,7 @@ $(function(){
   $('.submit-id').click(function(){
     messages = [];
   var messageId = $('.thread-id').val();
+  var token = $('.token').val();
     $.getJSON(
          'https://graph.facebook.com/' + messageId + '/comments' +
          '?format=json&access_token=' + token
