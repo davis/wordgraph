@@ -3,11 +3,10 @@ html
   head
     title= title
     link(rel='stylesheet', href='/c3/c3.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/dist/style.min.css')
     script(src='jquery/dist/jquery.min.js')
     script(src='/d3/d3.min.js')
     script(src='/c3/c3.min.js')
   body
     block content
-    script(src='/javascripts/visualizer.js')
-    script(src='/javascripts/messageFetch.js')
+    script(src='/dist/production.min.js')
