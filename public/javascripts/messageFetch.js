@@ -21,6 +21,27 @@ $.getJSON(
     return messages;
     // location.href = URL.createObjectURL(blob);
   })
-  .then(function(blob) {
-    console.log(blob)
-});
+  .then(function(messages) {
+    var chart = c3.generate({
+      bindto: '.container',
+      data: {
+        x: 'count',
+        columns: [
+          countWords(messages).axis,
+          countWords(messages).columns,
+        ],
+        groups: [
+          ['count']
+        ],
+        type: 'bar'
+      },
+      axis: {
+        x: {
+          type: 'categorized',
+        }
+      },
+      transition: {
+        duration: 1000
+      }
+    });
+  });
