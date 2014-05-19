@@ -1,0 +1,20 @@
+{
+  "name": "wordgraph",
+  "version": "0.0.0",
+  "homepage": "https://github.com/daviskim/wordgraph",
+  "authors": [
+    "Davis Kim <dchk90@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.4.8",
+    "c3": "~0.1.42"
+  }
+}
