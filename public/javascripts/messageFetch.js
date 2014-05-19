@@ -14,6 +14,7 @@ $(function(){
   }
 
   $('.submit-id').click(function(){
+    messages = [];
   var messageId = $('.thread-id').val();
     $.getJSON(
          'https://graph.facebook.com/' + messageId + '/comments' +
