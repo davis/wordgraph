@@ -7,32 +7,6 @@ var svg = d3.select('.container').append('svg')
     // .attr('height', height)
   .append('g');
 
-var testmsgs = [
-  'hello hi hi davis',
-  'hi davis',
-  'hello',
-  'hello',
-  'patrick patrick patrick patrick patrick patrick patrick patrick',
-  'what is up',
-  'nothing much',
-  'more stuff stuff stuff stuff',
-  'stuff unique words words la lalala qwerty'
-];
-
-var messages2 = [
-  'hello hi davis',
-  'hi',
-  'hello',
-  'nothing',
-  'patrick patrick patrick patrick patrick patrick patrick patrick',
-  'patrick patrick stuff',
-  'what is up',
-  'nothing much',
-  'more stuff stuff stuff stuff',
-  'stuff unique words words la lalala qwerty'
-];
-
-
 // countWords: count words in an array of strings and return an object
 // with the counts of each word
 function countWords(messages) {
