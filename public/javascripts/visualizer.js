@@ -36,13 +36,14 @@ var messages2 = [
 // countWords: count words in an array of strings and return an object
 // with the counts of each word
 function countWords(messages) {
+  var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
   var words = {};
   for(var i = 0; i < messages.length; i++) {
     var split = messages[i].message.split(' ');
     for(var j = 0; j < split.length; j++) {
-      if(!words[split[j]]) {
+      if(!words[split[j]] && common.indexOf(split[j]) === -1) {
         words[split[j]] = 1;
-      } else {
+      } else if(words[split[j]]){
         words[split[j]]++;
       }
     }
@@ -53,8 +54,10 @@ function countWords(messages) {
     axis: ['count']
   };
   for(var word in words) {
-    result.columns.push(words[word]);
-    result.axis.push(word);
+    if(words[word] > 1) { // leaving out words that only happen once
+      result.columns.push(words[word]);
+      result.axis.push(word);
+    }
   }
   return result;
 }

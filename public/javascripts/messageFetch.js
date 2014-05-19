@@ -1,3 +1,4 @@
+var uninteresting = ['the', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
 var messages = [];
 var messageId = 300559876768618; //etc
 var token = 'CAACEdEose0cBAGlgEm88Yox64NgZBgcytY0pMbE0PFrNQ3F5NDEZB0UqD5YbGhStkwdIkUDvPh0LJM4RuM1ZCr3pNFbyrHhDWpqRCS5YJl4hj8ZAGswvn0B7zKAag63eEyn5urtBQZC8hFZBiPxswmc64tTZA5gkg28WzePRgQaw3LFlZAZAYUjM5MCZBJw9nQkQQZD';
