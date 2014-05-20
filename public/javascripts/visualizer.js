@@ -4,7 +4,7 @@ var svg = d3.select('.container').append('svg')
 
 var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
 
-function visualize(users, allWords) {
+function visualize(users, allWords, params) {
   var xAxis = ['x'];
   var userInfo = [];
   var userList = [];
@@ -16,12 +16,13 @@ function visualize(users, allWords) {
   console.log(userInfo);
 
   for(var word in allWords) {
-    if(allWords[word] > 1) {
-      console.log('pushing ', word )
-      xAxis.push(word);
-      for (var i = 0; i < userInfo.length; i++) {
-        var count = users[userInfo[i][0]].words[word] || 0;
-        userInfo[i].push(count);
+    if( !params.filterCommon || (params.filterCommon && common.indexOf(word) === -1) ) {
+      if( allWords[word] > params.threshold ) {
+        xAxis.push(word);
+        for (var i = 0; i < userInfo.length; i++) {
+          var count = users[userInfo[i][0]].words[word] || 0;
+          userInfo[i].push(count);
+        }
       }
     }
   }
