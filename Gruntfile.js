@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       cssmin: {
         minify: {
           expand: true,
-          cwd: 'public/stylesheets',
+          cwd: 'public/st',
           src: ['*.css', '!*.min.css'],
           dest: 'public/dist/',
           ext: '.min.css'
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
       shell: {
         prodServer: {
           command: [
-            // 'git push origin master',
+            'git push origin master',
             'git push azure master'
           ].join('&&')
         }
