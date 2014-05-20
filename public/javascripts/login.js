@@ -1,4 +1,14 @@
 $('.login').click(function() {
+  fbLogin();
+});
+
+$('.logout').click(function() {
+  FB.logout(function(response) {
+    console.log('You are now logged out.');
+  });
+});
+
+function fbLogin() {
   FB.login(function(response) {
     if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
@@ -9,4 +19,4 @@ $('.login').click(function() {
       console.log('User cancelled login or did not fully authorize.');
     }
   }, {scope: 'read_mailbox'});
-});
+}
