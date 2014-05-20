@@ -17,7 +17,7 @@ function visualize(users, allWords, params) {
 
   for(var word in allWords) {
     if( !params.filterCommon || (params.filterCommon && common.indexOf(word) === -1) ) {
-      if( allWords[word] > params.threshold ) {
+      if( allWords[word] > params.threshold && word !== '' ) {
         xAxis.push(word);
         for (var i = 0; i < userInfo.length; i++) {
           var count = users[userInfo[i][0]].words[word] || 0;
