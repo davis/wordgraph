@@ -1,10 +1,15 @@
 extends layout
 
 block content
+  //- initialize facebook
+  script(src='/javascripts/facebookInit.js')
   h1= title
+  div.login-area
+    button.login log in!
   div.params
     form
       input.thread-id(type='text' value='300559876768618')
-      input.token(type='text' value='CAACEdEose0cBACoBvTcZChqfoSNFFUa8uJ6aP9MZAAZAyUSYexSX84Iy4yXefHfurowHlm5fvc7BZBWG60i6nD7gxUpyONe4DzhpiHZCAan3Ni0oDZA6eyjZBg9IgrYbmYHZBRJYmIpTVPWUFqjB6NFiZCcZCEzt7eMqaiLnDOJmaJs6ZCfudsFLSs917sxWSyAa60ZD')
+      //- input.token(type='text' value='CAACEdEose0cBAC1qWZCtEoVegUnSByKCrElocWZCc2NxcddqQH6SeguTneKN78cv21C7sKVSQ9VzrGQ9wDNNVbnYGcn9EhxJRhvTjKogPUVzl8nN5ZAVTbSdPTT2SOezkAFdEaXo9tgStUcO25CIx4wy0ZAIWLCHZCsX4ZBLSWZAfRZAhkcIZAF0wPlMZCBytMZA8EZD')
       input.submit-id(type='button' value='go!')
+  div.fb-like(data-send="true" data-width="450" data-show-faces="true")
   div.container
