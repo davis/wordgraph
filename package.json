@@ -2,9 +2,6 @@
   "name": "wordgraph",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "sh deploy.sh"
-  },
   "dependencies": {
     "express": "~4.2.0",
     "static-favicon": "~1.0.0",
