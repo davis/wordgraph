@@ -4,10 +4,19 @@ block content
   h1= title
   div.login-area
     button.login log in!
+    button.logout log out!
   div.params
     form
-      input.thread-id(type='text' value='647787375301371')
+      div chatroom #
+        input.thread-id(type='text' value='635992783143004')
       //- input.token(type='text' value='CAACEdEose0cBAC1qWZCtEoVegUnSByKCrElocWZCc2NxcddqQH6SeguTneKN78cv21C7sKVSQ9VzrGQ9wDNNVbnYGcn9EhxJRhvTjKogPUVzl8nN5ZAVTbSdPTT2SOezkAFdEaXo9tgStUcO25CIx4wy0ZAIWLCHZCsX4ZBLSWZAfRZAhkcIZAF0wPlMZCBytMZA8EZD')
-      input.submit-id(type='button' value='go!')
+      div filter common?
+        input.filter-common(type='checkbox' checked)
+      div occurence threshold (use up/down arrow keys)
+        input.threshold(type='text' value='1')
+      div
+        input.submit-id(type='button' value='go!')
+        //- input.refresh(type='button' value='refresh with different params')
   //- div.fb-like(data-send="true" data-width="450" data-show-faces="true")
   div.container
+
