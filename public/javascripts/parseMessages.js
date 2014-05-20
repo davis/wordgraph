@@ -22,5 +22,7 @@ function parseMessages(messages, users, callback) {
   }
   console.log('parseMessages.js (end) - users', users);
   console.log('parseMessages.js (end) - allWords', allWords);
+  window.users = users;
+  window.allWords = allWords;
   callback(users, allWords);
 }
