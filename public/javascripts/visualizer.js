@@ -1,16 +1,35 @@
-// var width = 960,
-//     height = 500;
-
 // append an svg to the body
 var svg = d3.select('.container').append('svg')
-    // .attr('width', width)
-    // .attr('height', height)
   .append('g');
+
+var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
+
+// trying to add occurence of word to an author's usecount -- proving to be very difficult
+function parseMessages(messages) {
+  console.log('messages', messages)
+  console.log(messages.to)
+  var people = {};
+  for(var person in messages.to.data) {
+    people[person.name] = { words: {} };
+  }
+  for(var message in messages.comments.data) {
+    var author = message.from.name;
+    var split = message.message.split(' ');
+    for(var word in split) {
+      if(people[author].words[word]) {
+        people[author].words[word]++;
+      } else {
+        people[author].words[word] = 1;
+      }
+    }
+  }
+  console.log(people)
+  return people;
+}
 
 // countWords: count words in an array of strings and return an object
 // with the counts of each word
 function countWords(messages) {
-  var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
   var words = {};
   for(var i = 0; i < messages.length; i++) {
     var split = messages[i].message.split(' ');
@@ -35,38 +54,6 @@ function countWords(messages) {
   }
   return result;
 }
-
-// var chart = c3.generate({
-//   bindto: '.container',
-//   data: {
-//     x: 'count',
-//     columns: [
-//       countWords(testmsgs).axis,
-//       countWords(testmsgs).columns,
-//     ],
-//     groups: [
-//       ['count']
-//     ],
-//     type: 'bar'
-//   },
-//   axis: {
-//     x: {
-//       type: 'categorized',
-//     }
-//   },
-//   transition: {
-//     duration: 1000
-//   }
-// });
-
-// setTimeout(function () {
-//   chart.load({
-//     columns: [
-//       countWords(messages2).axis,
-//       countWords(messages2).columns,
-//     ],
-//   });
-// }, 1000);
 
 
 
