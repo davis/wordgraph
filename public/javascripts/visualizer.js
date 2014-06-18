@@ -2,7 +2,7 @@
 var svg = d3.select('.container').append('svg')
   .append('g');
 
-var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of'];
+var common = ['the', 'that', 'in', 'it', 'is', 'we', 'all', 'a', 'an', 'by', 'to', 'you', 'me', 'he', 'she', 'they', 'we', 'how', 'it', 'i', 'are', 'to', 'for', 'of', 'and', 'I', 'was'];
 
 function visualize(users, allWords, params) {
   var xAxis = ['x'];
