@@ -12,9 +12,10 @@ A small app built in 24 hours that uses d3/c3.js to display the most commonly us
 - Give it some time as it pulls in the data.
 - See what words are most popular!
 
-##Known limitations
+##Known limitations/bugs
 - Breaks on conversations longer than about 50 pages (Facebook API rate limit)
 - Only works for conversation groups (1 on 1 conversations don't work)
+- You may need to click log-in twice, once before and once after you plug in a conversation ID
 
 ##Links to screenshots
 Main UI: https://fbcdn-photos-e-a.akamaihd.net/hphotos-ak-xfa1/t39.2082-0/10173506_255734517944448_1931800983_n.png
