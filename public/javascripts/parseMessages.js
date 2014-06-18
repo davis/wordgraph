@@ -5,18 +5,20 @@ function parseMessages(messages, users, callback) {
 
   for(var i = 0; i < messages.length; i++) {
     var author = users[messages[i].from.name];
-    var split = messages[i].message.split(' ');
-    for(var j = 0; j < split.length; j++) {
-      var word = split[j];
-      if(!author.words[word]) {
-        author.words[word] = 1;
-      } else {
-        author.words[word]++;
-      }
-      if(!allWords[word]) {
-        allWords[word] = 1; // populate allWords obj
-      } else {
-        allWords[word]++;
+    if(messages[i].message) {
+      var split = messages[i].message.split(' ');
+      for(var j = 0; j < split.length; j++) {
+        var word = split[j];
+        if(!author.words[word]) {
+          author.words[word] = 1;
+        } else {
+          author.words[word]++;
+        }
+        if(!allWords[word]) {
+          allWords[word] = 1; // populate allWords obj
+        } else {
+          allWords[word]++;
+        }
       }
     }
   }
