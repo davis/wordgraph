@@ -1,8 +1,14 @@
 //TODO remove
 var $ = $;
 
+console.log('Welcome to wordgraph! Hope you can find what words you and your friends like to use!');
+console.log('You\'ll also find logs here that may be useful for tinkering around with the app as you wish');
+console.log('You can find the repo over at https://github.com/davis/wordgraph');
+console.log('Happy hacking!');
+
 $('.submit-id').click(function() {
-var $threadId = $('.thread-id').val();
+  console.log('if nothing happens, try clicking "log in" again, then hitting go');
+  var $threadId = $('.thread-id').val();
   FB.getLoginStatus(function(response) {
     if(response.status === 'connected') {
       fetchUsers($threadId, function(u) {
@@ -20,12 +26,14 @@ $('.filter-common').click(function() {
   visualize(users, allWords, getParams());
 });
 
-$('.threshold').on('keydown', function(e) {
+$('body').on('keydown', function(e) {
   var set;
   if(e.keyCode === 38) {
+    e.preventDefault();
     set = parseFloat($('.threshold').val()) + 1;
     $('.threshold').val(set);
   } else if (e.keyCode === 40 && $('.threshold').val() > 1) {
+    e.preventDefault();
     set = $('.threshold').val() - 1;
     $('.threshold').val(set);
   }
